@@ -1,0 +1,31 @@
+.post-title {
+    text-transform: capitalize;
+    color: var(--primary-color);
+}
+
+.post-name {
+    text-transform: capitalize;
+}
+
+.post-img {
+    width: 45rem;
+    height: 35rem;
+    object-fit: cover;
+}
+
+.post-tags {
+    color: gray;
+    text-transform: lowercase;
+}
+
+@media (max-width: 500px) {
+    .post-img {
+        width: 22rem;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px){
+    .post-img {
+        width: 26rem;
+    }
+}

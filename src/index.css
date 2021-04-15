@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --primary-color: #8eb38a;
+  --transparent-background: #ffffffa9;
+}
+
+.button {
+  background-color: var(--primary-color);
+  padding: 0.3rem 1.3rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.3rem;
+  text-align: center;
+  margin: 0.5rem;
+  color: black;
+  width: -webkit-fill-available;
+}
+
+.button:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  text-decoration: none;
+}
+
+.button-link {
+  color: rgb(130, 205, 252);
+  border: none;
+  background: transparent;
+}
+
+.button-link:hover {
+  color: rgb(117, 117, 241);
+}
+
+.error-section {
+  background-image: url('./images/background-img.jpg');
+  background-size: cover;
+  height: 92vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-wrapper {
+  background: var(--transparent-background);
+  border-radius: 10px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 5rem;
+}

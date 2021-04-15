@@ -1,0 +1,32 @@
+.login-section {
+    background-image: url('../../images/background-img.jpg');
+    background-size: cover;
+    height: 92vh;
+    display: grid;
+}
+
+.login-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content {
+    background: var(--transparent-background);
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 5rem;
+    text-align: center;
+}
+
+.login-input {
+    margin: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-bottom: 2px solid rgb(158, 158, 158);
+    border-radius: 0.3rem;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
