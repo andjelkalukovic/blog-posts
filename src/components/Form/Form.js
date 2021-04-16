@@ -31,8 +31,6 @@ const Form = ({ postId, setPostId }) => {
         setPostData({ title: '', content: '', tags: '', selectedFile: '' })
     }
 
-    console.log(user.result.name)
-
     // if (!user.result.name) {
     //     return (
     //         <div>
