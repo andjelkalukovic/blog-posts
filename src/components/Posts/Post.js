@@ -12,13 +12,15 @@ const Post = ({ post, setPostId }) => {
     const [readMore, setReadMore] = useState(false);
 
     const Likes = () => {
-        if (post.likes.length > 0) {
-            return post.likes.find((like) => like === (user.result.googleId || user.result._id))
-                ? (
-                    <span>{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}`}</span>
-                ) : (
-                    <span>{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</span>
-                );
+        if (user) {
+            if (post.likes.length > 0) {
+                return post.likes.find((like) => like === (user.result.googleId || user.result._id))
+                    ? (
+                        <span>{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}`}</span>
+                    ) : (
+                        <span>{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</span>
+                    );
+            }
         }
         return <span><AiTwotoneLike /></span>;
     }
