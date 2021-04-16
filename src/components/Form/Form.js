@@ -24,7 +24,7 @@ const Form = ({ postId, setPostId }) => {
         e.preventDefault();
         if (postId === 0) {
             dispatch(createPost({ ...postData, name: user.result.name }))
-        } else {
+        } else  {
             dispatch(updatePost(postId, { ...postData, name: user.result.name }))
         }
         setPostId(0);
@@ -44,7 +44,7 @@ const Form = ({ postId, setPostId }) => {
     return (
         <div className='form-card py-5'>
             <h3>{postId ? 'Edit your' : 'Create new'} blog post</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={()=>handleSubmit}>
                 <input name='title' placeholder='Title' value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} className='form-input'/>
                 <div>
                     <textarea name='content' placeholder='Content' value={postData.content} onChange={(e) => setPostData({ ...postData, content: e.target.value })}  className='form-input'/>
