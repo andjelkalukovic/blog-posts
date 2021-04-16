@@ -23,6 +23,7 @@ const Login = () => {
         } else {
             dispatch(signin(formData, history))
         }
+        window.location.reload();
     }
 
     const handleChange = (e) => {
@@ -38,6 +39,7 @@ const Login = () => {
         try {
             dispatch({ type: AUTH, data: { result, token } });
             history.push('/');
+            window.location.reload();
         } catch (error) {
             console.log(error);
         }

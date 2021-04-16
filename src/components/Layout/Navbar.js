@@ -11,7 +11,6 @@ const Navigation = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const location = useLocation();
-    console.log(user)
 
     useEffect(() => {
         //const token = user.token;
@@ -25,9 +24,12 @@ const Navigation = () => {
     }, [location])
 
     const handleLogout = () => {
+        localStorage.removeItem('profile')
+        localStorage.clear()
         dispatch({ type: LOGOUT })
-        history.push('/signin');
+        history.push('/');
         setUser(null);
+        window.location.reload();
     }
 
     return (
@@ -41,9 +43,9 @@ const Navigation = () => {
                     <Nav className="ml-auto">
                         {user ? <>
                             <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href='/signin' onClick={handleLogout}>Logout</Nav.Link>
+                            <Nav.Link href='/' onClick={handleLogout}>Logout</Nav.Link>
                         </> : <>
-                                <Nav.Link href='/signin'>Log In</Nav.Link>
+                                <Nav.Link href='/'>Log In</Nav.Link>
                             </>}
                     </Nav>
                 </Navbar.Collapse>

@@ -7,12 +7,14 @@ import Error from './components/Layout/Error';
 import Post from './components/Posts/Post';
 
 function App() {
+  const user = JSON.parse(localStorage.getItem('profile'));
+
   return (
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route exact path='/'><Home /></Route>
-        <Route path='/signin'><Login /></Route>
+        {user ? <Route exact path='/'><Home /></Route> :
+          <Route path='/'><Login /></Route>}
         <Route path='/:id' children={<Post />}></Route>
         <Route path='*'><Error /></Route>
       </Switch>
