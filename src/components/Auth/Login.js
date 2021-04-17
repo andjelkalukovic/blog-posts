@@ -23,6 +23,7 @@ const Login = () => {
         } else {
             dispatch(signin(formData, history))
         }
+        history.push('/');
         window.location.reload();
     }
 

@@ -15,6 +15,7 @@ code {
 :root {
   --primary-color: #8eb38a;
   --transparent-background: #ffffffa9;
+  --hover-color: #4e6f4b;
 }
 
 .button {

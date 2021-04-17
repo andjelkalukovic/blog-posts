@@ -12,10 +12,38 @@
     height: 35rem;
     object-fit: cover;
 }
-
 .post-tags {
     color: gray;
     text-transform: lowercase;
+}
+
+.post-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    margin-left: 0.8rem;
+    }
+
+.like-btn,
+.edit-btn {
+    color: var(--primary-color);
+}
+
+.like-btn:hover,
+.edit-btn:hover {
+    color: var(--hover-color);
+}
+
+.like-text {
+    font-size: 1.05rem;
+}
+
+.delete-btn {
+    color: #912f0f;
+}
+
+.delete-btn:hover {
+    color: #e8440f;
 }
 
 @media (max-width: 500px) {

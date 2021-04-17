@@ -16,9 +16,9 @@ const Post = ({ post, setPostId }) => {
             if (post.likes.length > 0) {
                 return post.likes.find((like) => like === (user.result.googleId || user.result._id))
                     ? (
-                        <span>{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}`}</span>
+                        <span className='like-text'>{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}`}</span>
                     ) : (
-                        <span>{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</span>
+                        <span className='like-text'>{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</span>
                     );
             }
         }
@@ -43,13 +43,13 @@ const Post = ({ post, setPostId }) => {
 
             <div>
                 {(user.result.googleId === post.author || user.result._id === post.author) && (
-                    <button onClick={() => setPostId(post._id)}><AiTwotoneEdit /></button>
+                    <button onClick={() => setPostId(post._id)} className='edit-btn post-btn'><AiTwotoneEdit /></button>
                 )}
 
-                <button onClick={() => dispatch(likePost(post._id))}><Likes /></button>
+                <button onClick={() => dispatch(likePost(post._id))} className='like-btn post-btn'><Likes /></button>
 
                 {(user.result.googleId === post.author || user.result._id === post.author) && (
-                    <button onClick={() => dispatch(deletePost(post._id))}><ImBin /></button>
+                    <button onClick={() => dispatch(deletePost(post._id))} className='delete-btn post-btn'><ImBin /></button>
                 )}
             </div>
         </div>
