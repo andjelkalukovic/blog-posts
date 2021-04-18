@@ -8,7 +8,7 @@ const Posts = ({ setPostId, posts }) => {
     return (
         !posts.length ? <Spinner animation="grow" variant="secondary" /> :
         (<div>
-                {posts.map((post) => (
+                {posts.reverse().map((post) => (
                      <div key={post._id}>
                         <Post post={post} setPostId={setPostId} />
                     </div>

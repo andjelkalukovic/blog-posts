@@ -46,14 +46,20 @@
     color: #e8440f;
 }
 
-@media (max-width: 500px) {
+@media (min-width: 1000px) and (max-width: 1200px) {
     .post-img {
-        width: 22rem;
+        width: 35rem;
     }
 }
 
-@media (min-width: 501px) and (max-width: 768px){
+@media (min-width: 501px) and (max-width: 999px){
     .post-img {
         width: 26rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .post-img {
+        width: 22rem;
     }
 }

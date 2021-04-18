@@ -4,7 +4,6 @@ import Navbar from './components/Layout/Navbar'
 import Home from './components/Layout/Home';
 import Login from './components/Auth/Login';
 import Error from './components/Layout/Error';
-import Post from './components/Posts/Post';
 
 function App() {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -15,7 +14,6 @@ function App() {
       <Switch>
         {user ? <Route exact path='/'><Home /></Route> :
           <Route path='/'><Login /></Route>}
-        <Route path='/:id' children={<Post />}></Route>
         <Route path='*'><Error /></Route>
       </Switch>
     </BrowserRouter>
