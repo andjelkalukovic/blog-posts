@@ -30,3 +30,20 @@
     border-bottom-left-radius: 0rem;
     border-bottom-right-radius: 0rem;
 }
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-icon {
+    color: gray;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.password-icon:hover {
+    color: #5f5f5f;
+}

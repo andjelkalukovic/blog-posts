@@ -5,6 +5,7 @@ import { GoogleLogin } from 'react-google-login'
 import Input from './Input'
 import { AUTH } from '../../constants/actionTypes'
 import { signin, signup } from '../../actions/auth'
+import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs'
 import './login.css'
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', repeatPassword: '' }
@@ -68,9 +69,13 @@ const Login = () => {
                         )}
 
                         <Input name='email' placeholder='Email' type='email' handleChange={handleChange} />
-                        <Input name='password' placeholder='Password' type={showPassword ? 'text' : 'password'}
-                            handleChange={handleChange} handleShowPassword={handleShowPassword} />
-                        {isSignedup && <Input name='repeatPassword' placeholder='Repeat Password' type='password' handleChange={handleChange} />}
+
+                        <div className='password-wrapper'>
+                            <Input name='password' placeholder='Password' type={showPassword ? 'text' : 'password'}
+                                handleChange={handleChange} />
+                            {isSignedup && <Input name='repeatPassword' placeholder='Repeat Password' type={showPassword ? 'text' : 'password'} handleChange={handleChange} />}
+                            <span onClick={handleShowPassword} className='password-icon'>{showPassword ? <BsEyeSlashFill /> : <BsEyeFill />}</span>
+                        </div>
 
                         <div>
                             <button type='submit' className='button'>{isSignedup ? 'Sign Up' : 'Sign In'}</button>

@@ -27,6 +27,10 @@ const Post = ({ post, setPostId }) => {
 
     const handleReadMore = () => { setReadMore(!readMore) }
 
+    const handleSeeFull = () => {
+        console.log('see post')
+    }
+
     return (
         <div className='py-5'>
             <h3 className='post-title'>{post.title}</h3>
@@ -42,16 +46,17 @@ const Post = ({ post, setPostId }) => {
             <p className='post-tags'>{post.tags.map((tag) => `#${tag} `)}</p>
 
             <div>
+                <button onClick={() => dispatch(likePost(post._id))} className='like-btn post-btn'><Likes /></button>
+
                 {(user.result.googleId === post.author || user.result._id === post.author) && (
                     <button onClick={() => setPostId(post._id)} className='edit-btn post-btn'><AiTwotoneEdit /></button>
                 )}
-
-                <button onClick={() => dispatch(likePost(post._id))} className='like-btn post-btn'><Likes /></button>
 
                 {(user.result.googleId === post.author || user.result._id === post.author) && (
                     <button onClick={() => dispatch(deletePost(post._id))} className='delete-btn post-btn'><ImBin /></button>
                 )}
             </div>
+            <button onClick={handleSeeFull}>See Full</button>
         </div>
     )
 }
